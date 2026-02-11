@@ -5,26 +5,26 @@ const stats = [
   {
     icon: Shield,
     value: "100%",
-    label: "Seguranca",
-    desc: "Decisoes baseadas em dados e evidencias",
+    label: "Segurança",
+    desc: "Decisões baseadas em dados e evidências",
   },
   {
     icon: Target,
-    value: "500+",
-    label: "Clientes",
-    desc: "Transformacoes reais e comprovadas",
+    value: "1000+",
+    label: "Alunos",
+    desc: "Transformações reais e comprovadas",
   },
   {
     icon: Users,
     value: "24/7",
     label: "Suporte",
-    desc: "Acompanhamento continuo via WhatsApp",
+    desc: "Acompanhamento contínuo via WhatsApp",
   },
   {
     icon: Award,
-    value: "10+",
+    value: "20+",
     label: "Anos",
-    desc: "Experiencia profissional no mercado",
+    desc: "Experiência profissional no mercado",
   },
 ]
 
@@ -38,78 +38,57 @@ export function AuthoritySection() {
       />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
-          {/* Image column */}
-          <div className="relative w-full max-w-xs shrink-0 sm:max-w-sm lg:w-[360px]">
-            <div className="relative">
-              {/* Glow behind */}
-              <div
-                className="absolute inset-0 -z-10 translate-y-6 scale-90 rounded-full bg-[#E53935]/15 blur-[80px]"
-                aria-hidden="true"
-              />
-              {/* Glass frame */}
-              <div className="overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.03] p-2 backdrop-blur-sm">
-                <Image
-                  src="/trainer-gym.jpg"
-                  alt="Personal Trainer na academia - mais de 10 anos de experiência"
-                  width={360}
-                  height={480}
-                  className="h-auto w-full rounded-2xl object-cover"
-                  sizes="(max-width: 768px) 280px, 360px"
-                />
-              </div>
-              {/* Floating glass badge - enhanced */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-[#E53935]/30 bg-[#1C1C1C]/95 px-6 py-2.5 text-sm font-bold text-white shadow-xl shadow-[#E53935]/20 backdrop-blur-xl sm:text-base">
-                <span className="text-[#E53935] font-extrabold">10+</span> anos de experiência
-              </div>
-            </div>
+        <div className="flex flex-col items-center">
+          {/* Main Title Area */}
+          <div className="mb-12 text-center">
+            <span className="mb-4 inline-block text-sm font-black uppercase tracking-[0.4em] text-[#E53935]">
+              Autoridade Comprovada
+            </span>
+            <h2 className="font-condensed text-4xl font-black uppercase italic leading-tight text-white sm:text-6xl text-balance">
+              Equilíbrio entre <span className="text-[#E53935]">Ciência</span> e Experiência
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/50 sm:text-lg">
+              Mais de duas décadas refinando a estratégia perfeita para quem busca o máximo desempenho e resultados reais.
+            </p>
           </div>
 
-          {/* Text column */}
-          <div className="flex-1 text-center lg:text-left">
-            <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-[#E53935] sm:text-sm">
-              Por que nos escolher
-            </span>
-            <h2 className="text-2xl font-extrabold leading-tight text-white text-balance sm:text-3xl md:text-4xl">
-              Profissionalismo, clareza e{" "}
-              <span className="text-[#E53935]">resultado</span>
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/50 sm:text-base lg:mx-0">
-              Cada plano foi pensado para entregar estrategia, acompanhamento e
-              decisoes seguras. Nada generico. Tudo personalizado.
-            </p>
+          {/* Stats grid - Redesigned for impact without image */}
+          <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map(({ icon: Icon, value, label, desc }) => (
+              <div
+                key={label}
+                className="group relative flex flex-col items-center gap-5 overflow-hidden rounded-[2.5rem] border border-white/[0.05] bg-white/[0.02] p-8 text-center backdrop-blur-md transition-all duration-500 hover:border-[#E53935]/30 hover:bg-white/[0.04]"
+              >
+                <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-[#E53935]/10 blur-3xl transition-opacity opacity-0 group-hover:opacity-100" />
 
-            {/* Stats grid */}
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 md:mt-10">
-              {stats.map(({ icon: Icon, value, label, desc }) => (
-                <div
-                  key={label}
-                  className="group flex flex-col items-center gap-2 rounded-2xl border border-white/[0.08] bg-white/[0.04] p-4 text-center backdrop-blur-sm transition-all duration-300 hover:border-[#E53935]/20 hover:bg-white/[0.07] sm:p-5 lg:items-start lg:text-left"
-                >
-                  <div className="inline-flex items-center justify-center rounded-xl bg-[#E53935]/10 p-2.5 transition-colors duration-300 group-hover:bg-[#E53935]/15">
-                    <Icon className="h-4 w-4 text-[#E53935] sm:h-5 sm:w-5" />
-                  </div>
-                  <span className="text-xl font-extrabold text-white sm:text-2xl">
+                <div className="relative inline-flex items-center justify-center rounded-2xl bg-[#E53935]/10 p-4 transition-transform duration-500 group-hover:scale-110 group-hover:bg-[#E53935]/15">
+                  <Icon className="h-6 w-6 text-[#E53935]" />
+                </div>
+
+                <div className="space-y-1">
+                  <span className="block text-4xl font-black tracking-tight text-white sm:text-5xl">
                     {value}
                   </span>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-white/70 sm:text-xs">
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#E53935] sm:text-xs">
                     {label}
                   </p>
-                  <p className="text-[10px] leading-relaxed text-white/40 sm:text-xs">
-                    {desc}
-                  </p>
                 </div>
-              ))}
-            </div>
 
-            <div className="mt-8 text-center lg:text-left">
-              <a
-                href="#planos"
-                className="inline-flex items-center justify-center rounded-full bg-[#E53935] px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#E53935]/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C62828] hover:shadow-xl sm:text-base"
-              >
-                Escolher meu plano
-              </a>
-            </div>
+                <p className="text-sm leading-relaxed text-white/40">
+                  {desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <a
+              href="#planos"
+              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-[#E53935] px-10 py-4 text-base font-black uppercase tracking-widest text-white shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#C62828] hover:shadow-[#E53935]/40"
+            >
+              <span className="relative z-10">Falar com o Especialista</span>
+              <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 -translate-x-full group-hover:translate-x-full" />
+            </a>
           </div>
         </div>
       </div>
