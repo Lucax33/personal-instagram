@@ -3,8 +3,8 @@ import { MessageCircle, ChevronDown } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative h-auto overflow-hidden bg-[#0F0F0F] pb-4">
-      {/* Background person image - matches reference style */}
+    <section className="relative h-auto min-h-[200px] overflow-hidden bg-[#0F0F0F] pb-4 md:min-h-0">
+      {/* Background person image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/background-person.png"
@@ -14,64 +14,57 @@ export function HeroSection() {
           priority
           sizes="100vw"
         />
-        {/* Gradient overlays for blending into dark theme */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0F0F0F]/70 to-[#0F0F0F]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-[#0F0F0F]/50 to-transparent" />
-        <div className="absolute inset-0 bg-[#0F0F0F]/30" />
+        {/* Gradient optimised for text-over-torso visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0F0F0F]/10 via-transparent to-[#0F0F0F] z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-[#0F0F0F]/80 to-transparent z-0" />
       </div>
 
-      {/* Red glow accent */}
-      <div
-        className="pointer-events-none absolute left-1/2 top-1/3 -z-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E53935]/10 blur-[120px] md:h-96 md:w-96"
-        aria-hidden="true"
-      />
-
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center px-4 pt-12 sm:px-6 lg:px-8">
-        <div className="mx-auto w-full max-w-3xl text-center">
-          {/* Glass badge */}
-          <span className="mb-5 inline-block rounded-full border border-white/10 bg-white/[0.05] px-5 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70 backdrop-blur-md sm:text-xs md:mb-6">
+      {/* Content - Pushed down to start from the Torso - Optimized for 3 plans visibility */}
+      <div className="relative z-10 flex flex-col items-center px-4 pt-[42vh] -mb-2 sm:pt-[45vh] sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-4xl text-center">
+          {/* Glass badge - premium */}
+          <span className="glass-premium mb-1 inline-block rounded-full px-3 py-1 text-[8px] font-bold uppercase tracking-[0.25em] text-white/90 sm:text-xs">
             Acompanhamento Profissional
           </span>
 
-          <h1 className="text-3xl font-extrabold leading-[1.1] text-white sm:text-4xl md:text-5xl lg:text-6xl text-balance">
+          <h1 className="font-condensed text-2xl font-black uppercase italic leading-[0.9] tracking-tight text-white/95 sm:text-5xl md:text-6xl lg:text-7xl text-balance drop-shadow-2xl">
             Transforme seus{" "}
-            <span className="text-[#E53935]">resultados</span>
+            <span className="text-[#E53935] drop-shadow-[0_0_25px_rgba(229,57,53,0.6)]">resultados</span>
             <br className="hidden sm:block" />
             {" "}com um plano feito
             <br className="hidden sm:block" />
-            {" "}para voce
+            {" "}para você
           </h1>
 
-          <p className="mx-auto mt-2 max-w-lg text-xs leading-relaxed text-white/50 sm:mt-3 sm:text-base">
-            Acompanhamento profissional, estrategia clara e resultados reais.
-            Invista no seu melhor desempenho.
+          <p className="mx-auto mt-2 max-w-lg text-[11px] leading-relaxed text-white/70 font-medium drop-shadow-md hidden sm:block">
+            Estratégia clara e resultados reais para o seu desempenho.
           </p>
 
           {/* CTA buttons */}
-          <div className="mt-4 flex flex-col items-center justify-center gap-2 pb-0 sm:flex-row md:mt-6">
+          <div className="mt-3 flex flex-col items-center justify-center gap-2 sm:flex-row md:mt-8 md:gap-4">
             <a
               href="#planos"
-              className="inline-flex w-full items-center justify-center rounded-full bg-[#E53935] px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#E53935]/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C62828] hover:shadow-xl sm:w-auto sm:text-base"
+              className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full bg-[#E53935] px-6 py-2.5 text-xs font-black uppercase tracking-wider text-white shadow-xl shadow-[#E53935]/30 transition-all duration-300 hover:-translate-y-1 hover:bg-[#C62828] hover:shadow-2xl sm:w-auto sm:px-8 sm:py-3 sm:text-sm md:text-base"
             >
-              Ver planos disponiveis
+              <span className="relative z-10">Ver planos</span>
+              <div className="absolute inset-0 -z-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full -translate-x-full" />
             </a>
             <a
               href="https://api.whatsapp.com/send?phone=553191632614&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20de%20acompanhamento."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-8 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/[0.12] sm:w-auto sm:text-base"
+              className="glass-premium inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-2.5 text-xs font-black uppercase tracking-wider text-white transition-all duration-300 hover:bg-white/[0.08] sm:w-auto sm:px-8 sm:py-3 sm:text-sm md:text-base"
             >
-              <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+              <MessageCircle className="h-3.5 w-3.5 fill-white/10" />
               Falar no WhatsApp
             </a>
           </div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator - hidden on small vertical screens */}
         <a
           href="#planos"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white/30 transition-colors hover:text-white/60"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce transition-colors text-white/20 hover:text-[#E53935]/80 hidden sm:block"
           aria-label="Rolar para planos"
         >
           <ChevronDown className="h-6 w-6" />
