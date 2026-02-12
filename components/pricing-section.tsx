@@ -23,7 +23,7 @@ const plans = [
       "Reducao de riscos",
       "Consulta individual",
     ],
-    url: "https://api.whatsapp.com/send?phone=553191632614&text=Ol%C3%A1!%20Tenho%20interesse%20no%20Acompanhamento%20Farmacoterap%C3%AAutico.%20Gostaria%20de%20agendar%20uma%20consulta.",
+    url: "https://app.primecoaching.com.br/checkout/plan/23664",
     highlight: false,
   },
   {
